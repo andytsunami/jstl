@@ -31,26 +31,21 @@
 			<td width="20%">Remover?</td>
 		</tr>
 		
-		<%
-			List<Produto> produtoList = (List<Produto>) request.getAttribute("produtoList");
-			for(Produto p : produtoList) {
-		%>
+		<c:forEach items="${produtoList}" var="p">
 		
-			<tr id="produto<%= p.getId() %>">
-				<td><%= p.getNome().toUpperCase() %></td>
-				<td><%= p.getPreco() %></td>
-				<td><%= p.getDescricao() %></td>
-				<td><%= p.getDataInicioVenda().getTime() %></td>
-				<% if(p.isUsado()) { %>
-				<td>Sim</td>
-				<% } else { %>
-				<td>Não</td>
-				<% } %>
-				<td><a href="#" onclick="return removeProduto(<%= p.getId() %>)">Remover</a></td>
+			<tr id="produto${p.id}">
+				<td>${p.nome}</td>
+				<td>${p.preco}</td>
+				<td>${p.descricao}</td>
+				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="dd/MM/yyyy"/></td>
+				<c:set var="usado" value="Não"/>
+				<c:if test="${p.usado == true}">
+					<c:set var="usado" value="Sim"/>
+				</c:if>
+				<td>${usado}</td>
+				<td><a href="#" onclick="return removeProduto(${p.id})">Remover</a></td>
 			</tr>
-		<%
-			}
-		%>
+		</c:forEach>
 	</table>
 	<a href="/produtos/produto/formulario">Adicionar um produto</a>
 </body>
