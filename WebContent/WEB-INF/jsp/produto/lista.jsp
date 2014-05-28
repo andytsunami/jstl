@@ -41,11 +41,14 @@
 				<td>${p.preco}</td>
 				<td>${p.descricao}</td>
 				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="dd/MM/yyyy"/></td>
-				<c:set var="usado" value="Não"/>
-				<c:if test="${p.usado == true}">
-					<c:set var="usado" value="Sim"/>
-				</c:if>
-				<td>${usado}</td>
+				<c:choose>
+					<c:when test="${p.usado}">
+						<td>Sim</td>
+					</c:when>
+					<c:otherwise>
+						<td>Não</td>
+					</c:otherwise>
+				</c:choose>
 				<td><a href="#" onclick="return removeProduto(${p.id})">Remover</a></td>
 			</tr>
 		</c:forEach>

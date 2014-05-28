@@ -3,5 +3,6 @@ WebContent/WEB-INF/classes/
 *.class
 .Ds_Store
 /.settings
+build/**
 .classpath
 *.*~
