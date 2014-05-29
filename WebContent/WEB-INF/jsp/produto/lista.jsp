@@ -53,6 +53,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/produtos/produto/formulario">Adicionar um produto</a>
+	<a href="<c:url value="/produto/formulario"/>">Adicionar um produto</a>
 </body>
 </html>
