@@ -38,7 +38,7 @@
 				
 				<td>${i.index}</td>
 				<td>${p.nome}</td>
-				<td>${p.preco}</td>
+				<td><fmt:formatNumber value="${p.preco}" type="currency" currencySymbol="R$ " /></td>
 				<td>${p.descricao}</td>
 				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="dd/MM/yyyy"/></td>
 				<c:choose>
