@@ -40,7 +40,7 @@
 				<td>${p.nome}</td>
 				<td><fmt:formatNumber value="${p.preco}" type="currency" currencySymbol="R$ " /></td>
 				<td>${p.descricao}</td>
-				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="dd/MM/yyyy"/></td>
+				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="EEEE, dd 'de' MMMM 'de' yyyy"/></td>
 				<c:choose>
 					<c:when test="${p.usado}">
 						<td>Sim</td>
