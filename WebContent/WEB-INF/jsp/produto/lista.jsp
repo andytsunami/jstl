@@ -37,7 +37,7 @@
 			<tr id="produto${p.id}">
 				
 				<td>${i.index}</td>
-				<td>${p.nome}</td>
+				<td>${p.nome.toUpperCase()}</td>
 				<td><fmt:formatNumber value="${p.preco}" type="currency" currencySymbol="R$ " /></td>
 				<td>${p.descricao}</td>
 				<td><fmt:formatDate value="${p.dataInicioVenda.time}" pattern="EEEE, dd 'de' MMMM 'de' yyyy"/></td>
