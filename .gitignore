@@ -6,3 +6,5 @@ WebContent/WEB-INF/classes/
 build/**
 .classpath
 *.*~
+/bin
+/build
