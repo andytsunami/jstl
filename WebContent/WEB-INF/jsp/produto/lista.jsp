@@ -53,8 +53,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="<c:url value="/produto/formulario"/>">Adicionar um produto</a>
-	<c:set var="nome" value="João da Silva"/>
-	<c:out value="${nome}"/>
+	<a href="<c:url value="/produto/formulario"/>"><fmt:message key="mensagem.novoProduto"/></a>
 </body>
 </html>
